@@ -59,25 +59,20 @@ print(f"Porcentaje de filas con valores nulos: {porcentaje_nulos.mean()}%")
 # Imprimir los primeros juegos del DataFrame
 print(dfsteam_games_cleaned.head())
 
-# Imprimir información sobre el DataFrame
-print(dfsteam_games_cleaned.info())
 
 
-import numpy as np
 
-# Reemplazar "Soon.." con NaN
-dfsteam_games_cleaned['release_date'].replace("Soon..", np.nan, inplace=True)
-
-# Convertir la columna a datetime
-dfsteam_games_cleaned['release_date'] = pd.to_datetime(dfsteam_games_cleaned['release_date'], errors='coerce')
-
-import numpy as np
+# import numpy as np
 
 # Reemplazar "Soon.." con NaN
 dfsteam_games_cleaned['release_date'].replace("Soon..", np.nan, inplace=True)
 
 # Convertir la columna a datetime
 dfsteam_games_cleaned['release_date'] = pd.to_datetime(dfsteam_games_cleaned['release_date'], errors='coerce')
+
+# import numpy as np
+
+
 
 dfsteam_games_cleaned.head()
 
@@ -245,7 +240,7 @@ dfusers_items.drop(['playtime_2weeks'], axis=1, inplace=True)
 
 dfusers_items.head()
 
-import pandas as pd
+# import pandas as pd
 
 # Supongamos que ya tienes el DataFrame dfusers_items cargado
 
@@ -258,7 +253,7 @@ dfusers_items['id'] = pd.to_numeric(dfusers_items['id'], errors='coerce')
 print(dfusers_items.dtypes)
 
 
-import pandas as pd
+# import pandas as pd
 
 # Verifica el DataFrame dfsteam_games_cleaned
 if dfsteam_games_cleaned['id'].apply(lambda x: isinstance(x, (int, float))).all():
@@ -273,7 +268,7 @@ else:
     print("La columna 'id' de dfusers_items contiene valores no numéricos.")
 
 
-    import pandas as pd
+ #    import pandas as pd
 
 # Supongamos que ya tienes los DataFrames dfsteam_games_cleaned y dfusers_items cargados
 
@@ -294,8 +289,9 @@ year_with_most_playtime = merged_df.groupby(merged_df['release_date'].dt.year)['
 
 print(f"Año con más horas jugadas para el género 'Adventure': {year_with_most_playtime}")
 
+pip install fastapi
 
-import pandas as pd
+# import pandas as pd
 from fastapi import FastAPI
 
 # Supongamos que ya tienes los DataFrames dfsteam_games_cleaned y dfusers_items cargados
